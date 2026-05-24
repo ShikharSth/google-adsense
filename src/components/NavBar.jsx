@@ -4,8 +4,11 @@ export default function NavBar() {
   return (
     <header className="border-b border-white/10 bg-slate-950/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link to="/" className="text-xl font-bold">
+        {/* <Link to="/" className="text-xl font-bold">
           PulseHub JSX
+        </Link> */}
+        <Link to="/" className="text-xl font-bold">
+          PulseHubs
         </Link>
 
         <nav className="flex gap-4 text-sm">

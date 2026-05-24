@@ -5,7 +5,7 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold">Contact</h1>
 
         <p className="mt-6 text-slate-300">
-          Email: hello@your-domain.com
+          Email: shtshikhar12@gmail.com
         </p>
       </div>
     </div>
