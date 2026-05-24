@@ -57,9 +57,11 @@ export default function JokesPage() {
 
         <div className="panel">
 
-          <h1 className="text-4xl font-bold">
+          {/* <h1 className="text-4xl font-bold">
             Random Joke Generator
-          </h1>
+          </h1> */}
+          <h1 className="text-xl font-bold">Daily jokes help users relax and improve mood. 
+          This page updates automatically with safe and family-friendly humor.</h1>
 
           <div className='flex gap-4 mt-4 text-sm text-slate-400'>
              <span>Category: {category}</span>
