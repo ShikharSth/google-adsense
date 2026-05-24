@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+body {
+  background: #020617;
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+.panel {
+  @apply rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl;
+}
+
+.chip {
+  @apply inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300;
+}
