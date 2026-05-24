@@ -12,6 +12,10 @@ export default function HomePage() {
           React + Vite + Tailwind traffic website
         </h1>
 
+        <h1 className="mt-6 text-2xl font-black">
+          This website is under construction, but you can explore the jokes pages to see how it works.
+        </h1>
+
         <p className="mt-6 max-w-3xl text-slate-300">
           Build content pages, use free APIs, grow organic traffic,
           and monetize using Google AdSense.
