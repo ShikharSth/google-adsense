@@ -1,1 +1,24 @@
-<urlset></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://google-adsense-pi.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://google-adsense-pi.vercel.app/jokes</loc>
+  </url>
+
+  <url>
+    <loc>https://google-adsense-pi.vercel.app/quotes</loc>
+  </url>
+
+  <url>
+    <loc>https://google-adsense-pi.vercel.app/weather</loc>
+  </url>
+
+  <url>
+    <loc>https://google-adsense-pi.vercel.app/countries</loc>
+  </url>
+
+</urlset>

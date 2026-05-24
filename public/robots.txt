@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://google-adsense-pi.vercel.app/sitemap.xml
