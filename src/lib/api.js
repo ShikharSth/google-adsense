@@ -1,8 +1,18 @@
-export async function getRandomJoke() {
-  const res = await fetch('https://v2.jokeapi.dev/joke/Any?type=single');
-  const data = await res.json();
-  return data.joke;
+// export async function getRandomJoke() {
+//   const res = await fetch('https://v2.jokeapi.dev/joke/Any?type=single');
+//   const data = await res.json();
+//   return data.joke;
+// }
+const res = await fetch("https://v2.jokeapi.dev/joke/Any");
+const data = await res.json();
+
+if (data.type === "single") {
+  console.log(data.joke);
+} else {
+  console.log(data.setup);
+  console.log(data.delivery);
 }
+
 
 export async function getRandomQuote() {
   const res = await fetch('https://api.quotable.io/random');

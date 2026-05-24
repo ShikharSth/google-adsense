@@ -12,7 +12,7 @@ export default function HomePage() {
           React + Vite + Tailwind traffic website
         </h1>
 
-        <h1 className="mt-6 text-2xl font-black">
+        <h1 className="mt-6 text-xl font-black">
           This website is under construction, but you can explore the jokes pages to see how it works.
         </h1>
 

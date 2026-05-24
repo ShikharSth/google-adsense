@@ -1,13 +1,44 @@
 import { useEffect, useState } from 'react';
-import { getRandomJoke } from '../lib/api';
 import Container from '../components/Container';
 import AdSlot from '../components/AdSlot';
 
 export default function JokesPage() {
-  const [joke, setJoke] = useState('Loading...');
+  const [joke, setJoke] = useState('');
+  const [delivery, setDelivery] = useState('');
+  const [loading, setLoading] = useState(false);
 
   async function loadJoke() {
-    setJoke(await getRandomJoke());
+    setLoading(true);
+
+    try {
+      setJoke('Loading...');
+      setDelivery('');
+
+      const res = await fetch(
+        'https://v2.jokeapi.dev/joke/Any?safe-mode'
+      );
+
+      const data = await res.json();
+
+      // SINGLE JOKE
+      if (data.type === 'single') {
+        setJoke(data.joke);
+      }
+
+      // TWO PART JOKE
+      else if (data.type === 'twopart') {
+        setJoke(data.setup);
+
+        // wait 3 seconds before showing punchline
+        setTimeout(() => {
+          setDelivery(data.delivery);
+        }, 3000);
+      }
+    } catch (error) {
+      setJoke('Failed to load joke.');
+    }
+
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -17,23 +48,83 @@ export default function JokesPage() {
   return (
     <Container>
       <div className="grid gap-6 py-20 lg:grid-cols-2">
+
         <div className="panel">
-          <h1 className="text-4xl font-bold">Random Joke Generator</h1>
+
+          <h1 className="text-4xl font-bold">
+            Random Joke Generator
+          </h1>
 
           <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
-            {joke}
+
+            {/* Setup or Single Joke */}
+            <p className="text-lg">
+              {joke}
+            </p>
+
+            {/* Delivery */}
+            {delivery && (
+              <p className="mt-4 text-cyan-300 text-xl font-semibold">
+                {delivery}
+              </p>
+            )}
+
           </div>
 
           <button
             onClick={loadJoke}
-            className="mt-5 rounded-full bg-cyan-400 px-5 py-3 text-slate-950"
+            disabled={loading}
+            className="mt-5 rounded-full bg-cyan-400 px-5 py-3 text-slate-950 disabled:opacity-50"
           >
-            New Joke
+            {loading ? 'Loading...' : 'New Joke'}
           </button>
+
         </div>
 
         <AdSlot label="Sidebar Ad" />
+
       </div>
     </Container>
   );
 }
+
+
+// import { useEffect, useState } from 'react';
+// import { getRandomJoke } from '../lib/api';
+// import Container from '../components/Container';
+// import AdSlot from '../components/AdSlot';
+
+// export default function JokesPage() {
+//   const [joke, setJoke] = useState('Loading...');
+
+//   async function loadJoke() {
+//     setJoke(await getRandomJoke());
+//   }
+
+//   useEffect(() => {
+//     loadJoke();
+//   }, []);
+
+//   return (
+//     <Container>
+//       <div className="grid gap-6 py-20 lg:grid-cols-2">
+//         <div className="panel">
+//           <h1 className="text-4xl font-bold">Random Joke Generator</h1>
+
+//           <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
+//             {joke}
+//           </div>
+
+//           <button
+//             onClick={loadJoke}
+//             className="mt-5 rounded-full bg-cyan-400 px-5 py-3 text-slate-950"
+//           >
+//             New Joke
+//           </button>
+//         </div>
+
+//         <AdSlot label="Sidebar Ad" />
+//       </div>
+//     </Container>
+//   );
+// }
