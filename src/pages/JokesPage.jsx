@@ -5,6 +5,8 @@ import AdSlot from '../components/AdSlot';
 export default function JokesPage() {
   const [joke, setJoke] = useState('');
   const [delivery, setDelivery] = useState('');
+  const [category, setCategory] = useState('');
+  const [type, setType] = useState('');
   const [loading, setLoading] = useState(false);
 
   async function loadJoke() {
@@ -23,11 +25,15 @@ export default function JokesPage() {
       // SINGLE JOKE
       if (data.type === 'single') {
         setJoke(data.joke);
+        setCategory(data.category);
+        setType(data.type);
       }
 
       // TWO PART JOKE
       else if (data.type === 'twopart') {
         setJoke(data.setup);
+        setCategory(data.category);
+        setType(data.type);
 
         // wait 3 seconds before showing punchline
         setTimeout(() => {
@@ -55,6 +61,10 @@ export default function JokesPage() {
             Random Joke Generator
           </h1>
 
+          <div className='flex gap-4 mt-4 text-sm text-slate-400'>
+             <span>Category: {category}</span>
+             <span>Type: {type}</span>
+          </div>
           <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
 
             {/* Setup or Single Joke */}
@@ -63,7 +73,7 @@ export default function JokesPage() {
             </p>
 
             {/* Delivery */}
-            {delivery && (
+            {delivery ? 'loading': (
               <p className="mt-4 text-cyan-300 text-xl font-semibold">
                 {delivery}
               </p>
