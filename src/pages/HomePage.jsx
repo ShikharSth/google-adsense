@@ -31,14 +31,14 @@ export default function HomePage() {
         <div className="mt-8 flex gap-4">
           <Link
             to="/jokes"
-            className="rounded-full bg-cyan-400 px-5 py-3 font-medium text-slate-950"
+            className="rounded-full border border-white/10 hover:bg-cyan-400 px-5 py-3 font-medium text-white hover:text-slate-950 transition-colors duration-500"
           >
             Explore Jokes
           </Link>
 
           <Link
             to="/quotes"
-            className="rounded-full border border-white/10 px-5 py-3 font-medium text-white"
+            className="rounded-full border border-white/10 hover:bg-cyan-400 px-5 py-3 font-medium text-white hover:text-slate-950 transition-colors duration-500"
           >
             Explore Quotes
           </Link>

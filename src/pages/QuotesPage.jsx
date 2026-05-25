@@ -22,10 +22,10 @@ export default function QuotesPage() {
           <h1 className="text-4xl font-bold">Quote Generator</h1>
 
           <blockquote className="mt-6 text-2xl font-semibold">
-            "{quote.content}"
+            "{quote.q}"
           </blockquote>
 
-          <p className="mt-4 text-slate-400">— {quote.author}</p>
+          <p className="mt-4 text-slate-400">— {quote.a}</p>
 
           <button
             onClick={loadQuote}
