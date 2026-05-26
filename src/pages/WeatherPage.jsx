@@ -43,8 +43,11 @@ export default function WeatherPage() {
 
           {weather && (
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
+              {/* <p>Location: {city}</p> */}
+              {/* <p>Time: {weather.}</p> */}
               <p>Temperature: {weather.temperature_2m}°C</p>
               <p>Humidity: {weather.relative_humidity_2m}%</p>
+              <p>Wind Speed: {weather.wind_speed_10m} km/h</p>
             </div>
           )}
         </div>

@@ -75,7 +75,7 @@ export default function JokesPage() {
             </p>
 
             {/* Delivery */}
-            {!delivery && joke !== 'Loading...' && (
+            {!delivery && type=="twopart" && joke !== 'Loading...' && (
               <p className="mt-4 text-slate-400 animate-pulse">
                 Waiting for punchline...
               </p>
