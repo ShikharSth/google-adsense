@@ -42,6 +42,13 @@ export default function HomePage() {
           >
             Explore Quotes
           </Link>
+
+          <Link
+            to="/contact"
+            className="rounded-full border border-white/10 hover:bg-cyan-400 px-5 py-3 font-medium text-white hover:text-slate-950 transition-colors duration-500"
+          >
+            Contact
+          </Link>
         </div>
 
       </section>
