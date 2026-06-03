@@ -10,6 +10,7 @@ import WeatherPage from './pages/WeatherPage';
 import CountriesPage from './pages/CountriesPage';
 import PrivacyPage from './pages/PrivacyPage';
 import ContactPage from './pages/ContactPage';
+import QuizPage from './pages/QuizPage';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/jokes" element={<JokesPage />} />
           <Route path="/quotes" element={<QuotesPage />} />
+          <Route path="/quiz" element={<QuizPage /> } />
           <Route path="/weather" element={<WeatherPage />} />
           <Route path="/countries" element={<CountriesPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />

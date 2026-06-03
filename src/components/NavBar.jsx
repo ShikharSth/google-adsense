@@ -16,6 +16,7 @@ export default function NavBar() {
           <Link to="/quotes">Quotes</Link>
           <Link to="/weather">Weather</Link>
           <Link to="/countries">Countries</Link>
+          <Link to="/quiz">Quiz</Link>
         </nav>
       </div>
     </header>
