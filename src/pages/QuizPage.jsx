@@ -15,7 +15,7 @@ export default function QuizPage() {
   const fetchQuiz = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/v1/quizzes/1/"
+        "https://my-apis-fcsx.onrender.com/api/v1/quizzes/1/"
       );
 
       setQuiz(response.data);
